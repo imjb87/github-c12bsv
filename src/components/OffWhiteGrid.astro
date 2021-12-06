@@ -9,7 +9,7 @@ const { blok } = Astro.props
       {blok.title}
     </h2>
     <div class="mt-6 grid grid-cols-2 gap-0.5 md:grid-cols-4 lg:mt-8">
-      {blok.image.map(blok => (
+      {blok.image?.map(blok => (
         <LogoImage blok={blok} />
       ))}
     </div>
