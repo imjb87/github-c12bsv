@@ -1,5 +1,5 @@
 ---
-import DynamicComponent from "./DynamicComponent.astro"
+import ProductGalleryItem from "./ProductGalleryItem.astro"
 const { blok } = Astro.props
 ---
 
@@ -18,7 +18,7 @@ const { blok } = Astro.props
     </div>
     <div class="columns-1 md:columns-3">
       {blok.gallery_items.map(childBlok => (
-        <DynamicComponent blok={childBlok} key={childBlok._uid} />
+        <ProductGalleryItem blok={childBlok} key={childBlok._uid} />
       ))}
     </div>
   </div>
