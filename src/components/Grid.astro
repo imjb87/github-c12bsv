@@ -1,12 +1,12 @@
 ---
-import DynamicComponent from "./DynamicComponent.astro"
+import Slide from "./Slide.astro"
 const { blok } = Astro.props
 ---
 
 <ul className="flex flex-wrap p-8 bg-white container mx-auto">
   {blok.columns.map(blok => (
     <li clas="flex-auto px-2">
-      <DynamicComponent blok={blok} />
+      <Slide blok={blok} />
     </li>
   ))}
 </ul>
