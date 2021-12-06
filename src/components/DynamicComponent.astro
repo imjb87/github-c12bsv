@@ -40,7 +40,7 @@ const components = {
 
 }
 
-const DynamicComponent = components[blok.component] ? components[blok.component] : Placeholder
+const Component = components[blok.component] ? components[blok.component] : Placeholder
 ---
 
-<DynamicComponent blok={blok} />
+<Component blok={blok} />
