@@ -1,0 +1,17 @@
+---
+import Mail from "./Mail.astro"
+import Phone from "./Phone.astro"
+import Twitter from "./Twitter.astro"
+
+const { type } = Astro.props
+
+const Components = {
+  twitter: Twitter,
+  mail: Mail,
+  phone: Phone,
+}
+
+const Component = Components[type]
+---
+
+<Component />

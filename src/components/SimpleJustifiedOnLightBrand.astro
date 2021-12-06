@@ -1,0 +1,29 @@
+---
+const { blok } = Astro.props
+---
+
+<div class="bg-yellow-500">
+  <a
+    href={`/${blok.link.cached_url}`}
+  >
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-8 lg:py-24 lg:px-8 lg:flex lg:items-center lg:justify-between">
+      <h2 class="text-2xl tracking-tight text-gray-900 md:text-4xl uppercase">
+        <span class="block font-extrabold text-gray-700">
+          {blok.grey_title}
+        </span>
+        <span class="block font-semibold text-white">
+          {blok.white_title}
+        </span>
+      </h2>
+      <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+        <div class="inline-flex rounded-md shadow">
+          <span
+            class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-extrabold text-white bg-gray-700 hover:bg-gray-900 uppercase"
+          >
+            {blok.label}
+          </span>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>

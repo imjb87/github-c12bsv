@@ -1,0 +1,18 @@
+---
+import client from '../storyblokClient'
+import DynamicComponent from './DynamicComponent.astro'
+---
+
+<div class="bg-white-half">
+  <div class="pb-6 pt-16 container mx-auto">
+    <h1 class="text-6xl font-bold font-sans text-primary">
+      {blok.headline}
+    </h1>
+    <div class="text-gray-700 text-lg max-w-lg">{typeof blok.intro_text === "string" ? blok.intro_text : client.richTextResolver.render(blok.intro_text)}</div>
+  </div>
+  <div class="container mx-auto overflow-x-scroll flex w-full my-8 snap-x">
+    {blok.body.map(childBlok => (
+      <DynamicComponent blok={childBlok} />
+    ))}
+  </div>
+</div>

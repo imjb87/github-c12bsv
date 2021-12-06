@@ -1,0 +1,17 @@
+---
+import DynamicComponent from "./DynamicComponent.astro"
+const { blok } = Astro.props
+---
+
+<div class="bg-yellow-500">
+  <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+    <h2 class="block text-center text-base font-extrabold uppercase text-gray-700 tracking-widest uppercase">
+      {blok.title}
+    </h2>
+    <div class="mt-6 grid grid-cols-2 gap-0.5 md:grid-cols-4 lg:mt-8">
+      {blok.image.map(blok => (
+        <DynamicComponent blok={blok} />
+      ))}
+    </div>
+  </div>
+</div>

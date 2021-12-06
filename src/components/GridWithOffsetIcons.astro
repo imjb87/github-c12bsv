@@ -1,0 +1,27 @@
+---
+import DynamicComponent from "./DynamicComponent.astro"
+const { blok } = Astro.props
+---
+
+<div class="relative bg-white py-16 sm:py-24 lg:py-32">
+  <div class="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
+    <div>
+      <h2 class="block text-base text-center text-yellow-500 font-extrabold tracking-wide uppercase">
+        {blok.small_title}
+      </h2>
+      <p class="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-700 sm:text-4xl uppercase">
+        {blok.large_title}
+      </p>
+      <p class="my-5 max-w-prose mx-auto text-base text-gray-500">
+        {blok.content}
+      </p>
+    </div>
+    <div class="mt-12">
+      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 grid-rows-1">
+        {blok.grid_items_with_icon.map(childBlok => (
+          <DynamicComponent blok={childBlok} />
+        ))}
+      </div>
+    </div>
+  </div>
+</div>

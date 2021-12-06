@@ -1,0 +1,39 @@
+---
+import client from '../storyblokClient'
+const { blok } = Astro.props
+---
+
+<div class="pt-6 group">
+  <div class="flow-root h-4/5 bg-gray-50">
+    <div>
+      <a
+        href={`/${blok.button_link.cached_url}`}
+        prefetch="true"
+        target={blok.button_link.linktype === "url" && "_blank"}
+      >
+        <img
+          class="w-full"
+          src={blok.image.filename}
+          alt={blok.image.alt}
+        />
+      </a>
+    </div>
+    <div class="mt-6 px-6">
+      <div>
+        <h3 class="mt-8 text-lg font-extrabold text-gray-700 tracking-tight uppercase">
+          {blok.title}
+        </h3>
+        <p class="mt-5 text-base text-gray-300">{blok.content}</p>
+      </div>
+    </div>
+  </div>
+  <div class="bg-gray-50 px-6 pb-8">
+    <a
+      href={`/${blok.button_link.cached_url}`}
+      class={`mt-8 w-11/12 inline-flex items-center justify-center px-12 py-3 border border-transparent text-base font-extrabold bg-yellow-500 text-white hover:bg-gray-700 uppercase place-self-end}`}
+      target={blok.button_link.linktype === "url" && "_blank"}
+    >
+      Find out more
+    </a>
+  </div>
+</div>  

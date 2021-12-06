@@ -1,0 +1,22 @@
+---
+import client, { defaultRequestConfig as reqConfig } from '../storyblokClient'
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Page from '../components/Page.astro'
+
+export async function getStaticPaths() {
+  const { data: { stories } } = await client.get('cdn/stories', reqConfig)
+  return stories.map(story => {
+    const full_slug = story.full_slug === "home" ? undefined : story.full_slug
+    return {
+      params: { slug: full_slug },
+      props: { story } 
+    };
+  });
+}
+const { slug } = Astro.request.params;
+const { story } = Astro.props;
+---
+
+<BaseLayout>
+  <Page blok={story.content} />
+</BaseLayout>

@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .blend-multiply {
+    mix-blend-mode: multiply;
+  }
+
+  .drop-cap:first-letter {
+    font-size: 5rem;
+    float: left;
+    line-height: 2rem;
+    @apply font-serif;
+    @apply text-primary;
+    @apply mr-4;
+    @apply my-8;
+  }
+
+  .bg-white-half {
+    background: linear-gradient(to bottom, #fff 0%, #fff 50%, transparent 50%);
+  }
+
+  blockquote {
+    @apply text-4xl;
+    @apply text-primary;
+    @apply font-bold;
+    @apply font-serif;
+    @apply py-12;
+    @apply text-center;
+  }
+
+  .show-bullets ul {
+    list-style-type: disc;
+    color: #fdb813;
+    padding-left: 20px;
+  }
+
+  .show-bullets ul li {
+  }
+
+  .show-bullets p {
+    color: #7a7a7a;
+  }
+
+  .columns-1 {
+    columns: 1;
+  }
+
+  .columns-3 {
+    columns: 3;
+  }
+
+  .grey-block-divide b {
+    color: #fdb813;
+  }
+
+  /* FAQ's block */
+
+  .faq-lc a {
+    color: #fdb813;
+  }
+
+  .faq-lc a:hover {
+    color: #e2a40e;
+  }
+
+  p {
+    padding-bottom: 16px;
+  }
+}

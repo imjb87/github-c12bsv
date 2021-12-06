@@ -1,0 +1,29 @@
+---
+import client from '../storyblokClient'    
+const { blok } = Astro.props
+---
+
+<div class="bg-gray-700">
+  <div class="max-w-2xl mx-auto text-center py-16 px-4 sm:py-28 sm:px-6 lg:px-8 text-white">
+    <div>
+      <h2 class="block text-base text-center text-yellow-500 font-extrabold tracking-wide uppercase mb-3">
+        {blok.small_title}
+      </h2>
+    </div>
+    <div>
+      <h2 class="text-3xl text-white sm:text-5xl mb-8">
+        <span class="block uppercase">{blok.top_line_title}</span>
+        <span class="block font-extrabold uppercase">
+          {blok.bottom_line_title}
+        </span>
+      </h2>
+      <span class="block grey-block-divide">{client.richTextResolver.render(blok.content)}</span>
+      <a
+        href={`/${blok.link.cached_url}`}
+        class="mt-8 w-full sm:w-2/3 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-extrabold bg-yellow-500 text-white hover:bg-yellow-900 sm:w-auto uppercase"
+      >
+        {blok.label}
+      </a>
+    </div>
+  </div>
+</div>  

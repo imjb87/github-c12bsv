@@ -1,0 +1,53 @@
+---
+import Teaser from "./Teaser.astro"
+import Hero from "./Hero.astro"
+import Feature from "./Feature.astro"
+import Grid from "./Grid.astro"
+import Slide from "./Slide.astro"
+import Placeholder from "./Placeholder.astro"
+import Centered from "./Centered.astro"
+import SplitWithImage from "./SplitWithImage.astro"
+import OffsetSupportingText from "./OffsetSupportingText.astro"
+import FaqQuestion from "./FaqQuestion.astro"
+import OffWhiteGrid from "./OffWhiteGrid.astro"
+import LogoImage from "./LogoImage.astro"
+import GridWithOffsetIcons from "./GridWithOffsetIcons.astro"
+import GridItemIconImage from "./GridItemIconImage.astro"
+import GridWithImage from "./GridWithImage.astro"
+import GridItemImage from "./GridItemImage.astro"
+import SimpleJustifiedOnLightBrand from "./SimpleJustifiedOnLightBrand.astro"
+import SplitTwoTone from "./SplitTwoTone.astro"
+import SimpleCenteredBranded from "./SimpleCenteredBranded.astro"
+import ProductGallery from "./ProductGallery.astro"
+import ProductGalleryItem from "./ProductGalleryItem.astro"
+
+const { blok } = Astro.props
+
+const components = {
+  "teaser": Teaser,
+  "feature": Feature,
+  "grid": Grid,
+  "hero": Hero,
+  "slide": Slide,
+  "main-content": Centered,
+  "split-with-image": SplitWithImage,
+  "faqs": OffsetSupportingText,
+  "faq-question": FaqQuestion,
+  "off-white-grid": OffWhiteGrid,
+  "logo": LogoImage,
+  "grid-offset-icons": GridWithOffsetIcons,
+  "grid-item-icon-and-image": GridItemIconImage,
+  "grid-with-image": GridWithImage,
+  "grid-item-image-button": GridItemImage,
+  "simple-justified-on-light-brand": SimpleJustifiedOnLightBrand,
+  "split-two-tone": SplitTwoTone,
+  "simple-centered-branded": SimpleCenteredBranded,
+  "product-gallery": ProductGallery,
+  "product-gallery-item": ProductGalleryItem
+
+}
+
+const DynamicComponent = components[blok.component] ? components[blok.component] : Placeholder
+---
+
+<DynamicComponent blok={blok} />

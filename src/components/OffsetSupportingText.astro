@@ -1,0 +1,31 @@
+---
+import client from '../storyblokClient'
+import DynamicComponent from "./DynamicComponent.astro"
+const { blok } = Astro.props
+---
+
+<div class="bg-white">
+  <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-20 lg:px-8">
+    <div class="lg:grid lg:grid-cols-3 lg:gap-8">
+      <div>
+        <div>
+          <h2 class="text-3xl font-extrabold text-gray-700 uppercase">
+            {blok.left_title}
+          </h2>
+        </div>
+        <div>
+          <span class="text-base mt-4 block  text-gray-300 faq-lc">
+            {client.richTextResolver.render(blok.left_content)}{" "}
+          </span>
+        </div>
+      </div>
+      <div class="mt-12 lg:mt-0 lg:col-span-2">
+        {blok.faqs_block.map(blok => (
+          <dl class="space-y-12 mb-8">
+            <DynamicComponent blok={blok} />
+          </dl>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>

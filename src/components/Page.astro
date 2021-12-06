@@ -1,0 +1,9 @@
+---
+import DynamicComponent from './DynamicComponent.astro'
+
+const { blok } = Astro.props
+---
+
+{blok.body.map((childBlok) => (
+  <DynamicComponent blok={childBlok} />
+))}

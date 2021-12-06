@@ -1,0 +1,25 @@
+---
+import client from '../storyblokClient'
+const { blok } = Astro.props
+---
+
+<div class="relative">
+  <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100" />
+  <div class="w-full">
+    <div class="relative shadow-xl sm:overflow-hidden">
+      <div class="absolute inset-0">
+        <img
+          class="h-full w-full object-cover"
+          src={blok.background_image}
+          alt={blok.image_description}
+        />
+        <div class="absolute inset-0 bg-gray-400 mix-blend-multiply"></div>
+      </div>
+      <div class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-48 lg:px-8 max-w-6xl mx-auto">
+        <h1 class="text-center text-4xl text-white tracking-tight sm:text-5xl lg:text-6xl uppercase">
+          {client.richTextResolver.render(blok.text_overlay)}
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>
