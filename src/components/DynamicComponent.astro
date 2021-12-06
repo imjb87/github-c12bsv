@@ -2,7 +2,6 @@
 import Hero from "./Hero.astro"
 import Feature from "./Feature.astro"
 import Grid from "./Grid.astro"
-import Slide from "./Slide.astro"
 import Placeholder from "./Placeholder.astro"
 import Centered from "./Centered.astro"
 import SplitWithImage from "./SplitWithImage.astro"
@@ -21,23 +20,17 @@ const components = {
   "feature": Feature,
   "grid": Grid,
   "hero": Hero,
-  "slide": Slide,
   "main-content": Centered,
   "split-with-image": SplitWithImage,
   "faqs": OffsetSupportingText,
-  "faq-question": FaqQuestion,
   "off-white-grid": OffWhiteGrid,
   "logo": LogoImage,
   "grid-offset-icons": GridWithOffsetIcons,
-  "grid-item-icon-and-image": GridItemIconImage,
   "grid-with-image": GridWithImage,
-  "grid-item-image-button": GridItemImage,
   "simple-justified-on-light-brand": SimpleJustifiedOnLightBrand,
   "split-two-tone": SplitTwoTone,
   "simple-centered-branded": SimpleCenteredBranded,
-  "product-gallery": ProductGallery,
-  "product-gallery-item": ProductGalleryItem
-
+  "product-gallery": ProductGallery
 }
 
 const Component = components[blok.component] ? components[blok.component] : Placeholder
