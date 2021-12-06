@@ -1,6 +1,7 @@
 ---
 import client, { defaultRequestConfig as reqConfig } from '../storyblokClient'
 import Navigation from '../components/Navigation.jsx'
+import Footer from "../components/Footer.astro"
 const { data: { story } } = await client.get('cdn/stories/settings', reqConfig)
 ---
 
@@ -18,5 +19,6 @@ const { data: { story } } = await client.get('cdn/stories/settings', reqConfig)
   <body>
     <Navigation settings={story} client:load />
     <slot />
+    <Footer settings={story} />
   </body>
 </html>

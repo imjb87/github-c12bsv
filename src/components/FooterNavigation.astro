@@ -1,0 +1,23 @@
+---
+const { settings } = Astro.props
+---
+
+<nav
+  class="-mx-5 -my-2 flex flex-wrap justify-center mb-8"
+  aria-label="Footer"
+>
+  {
+    settings.content.footer_navi.map((navitem, index) => (
+      <div class="px-5 py-2">
+        <a
+          to={`/${navitem.link.cached_url.replace("home", "")}`}
+          prefetch="true"
+          class="text-xs text-gray-500 hover:text-white uppercase"
+        >
+          {navitem.top_line}
+          <br />
+          {navitem.bottom_line}
+        </a>
+      </div>
+    ))}
+</nav>  
